@@ -45,7 +45,7 @@ export const App = () => {
       <Section title="Please leave feedback">
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
-          onLeaveFeedback={onLeaveFeedback}
+          onLeaveFeedback={option => onLeaveFeedback(option)}
         />
       </Section>
 
