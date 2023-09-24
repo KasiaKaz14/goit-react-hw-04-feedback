@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import css from './FeedbackOptions.module.css';
 
-export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+export const FeedbackOptions = ({
+  options,
+  onLeaveFeedback,
+  selectedOption,
+}) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleButtonClick = option => {
