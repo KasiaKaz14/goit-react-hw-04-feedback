@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import css from './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  const [feedbackOptions, setFeedbackOptions] = useState(options);
+
   const handleButtonClick = option => {
-    setSelectedOption(option);
     onLeaveFeedback(option);
   };
 
   return (
     <>
-      {options.map((option, index) => {
+      {feedbackOptions.map((option, index) => {
         return (
           <button
             className={css.button}
