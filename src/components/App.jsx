@@ -6,20 +6,33 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import React, { useState } from 'react';
 
 export const App = () => {
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
+  const [stats, setStats] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
+
+  const { good, neutral, bad } = stats;
 
   const onLeaveFeedback = option => {
     switch (option) {
       case 'good':
-        setGood(prevGood => prevGood + 1);
+        setStats(prevStats => ({
+          ...prevStats,
+          good: prevStats.good + 1,
+        }));
         break;
       case 'neutral':
-        setNeutral(prevNeutral => prevNeutral + 1);
+        setStats(prevStats => ({
+          ...prevStats,
+          neutral: prevStats.neutral + 1,
+        }));
         break;
       case 'bad':
-        setBad(prevBad => prevBad + 1);
+        setStats(prevStats => ({
+          ...prevStats,
+          bad: prevStats.bad + 1,
+        }));
         break;
       default:
         break;
